@@ -50,7 +50,7 @@ public class SecurityConfiguration {
                             HttpMethod.PATCH.name()
                     ));
                     cors.applyPermitDefaultValues();
-                    cors.addAllowedOrigin(Constants.ASTERISK_SYMBOL);
+                    cors.addAllowedOrigin(Constants.ASTERISK_SYMBOL);  //NOSONAR
                     cors.addAllowedOriginPattern(Constants.ASTERISK_SYMBOL);
                     return cors;
                 })

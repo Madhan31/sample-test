@@ -218,7 +218,7 @@ public class UserController {
      * @return {@link SuccessResponse<User>} Retrieved user information along with HTTP status.
      */
     @GetMapping(Constants.USER_BY_USERNAME_URI)
-    public SuccessResponse<User> getUserByUsername(@PathVariable(FieldConstants.USERNAME) String username) {
+    public SuccessResponse<User> getUserByUsername(@PathVariable String username) {
         User userByUsername = userService.getUserByUsername(username);
         UserDTO updatedUserDto = mapper.map(userService.updateUser(mapper.map(userByUsername, User.class)), UserDTO.class);
         return new SuccessResponse<>(SuccessCode.GET_USER, updatedUserDto, HttpStatus.OK);
