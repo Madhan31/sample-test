@@ -45,4 +45,7 @@ public class UserContextHolder {
         USER_CONTEXT.set(userDto);
     }
 
+    public static void clearUserDto() {
+        USER_CONTEXT.remove();
+    }
 }
