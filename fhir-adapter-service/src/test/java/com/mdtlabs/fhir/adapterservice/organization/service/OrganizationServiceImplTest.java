@@ -49,7 +49,7 @@ class OrganizationServiceImplTest {
         Assertions.assertEquals(response, actualResponse);
     }
 
-   // @Test
+    @Test
     void createAndMapFhirOrganizationTest() {
         //given
         FhirOrganizationRequestDto requestDto = TestDataProvider.getFhirOrganizationRequestDTO();
@@ -61,6 +61,6 @@ class OrganizationServiceImplTest {
         when(siteSpiceFhirMappingRepository.save(siteFhirMapping)).thenReturn(siteFhirMapping);
         //then
         organizationService.createAndMapFhirOrganization(requestDto);
-        verify(siteSpiceFhirMappingRepository, atLeastOnce()).save(siteFhirMapping);
+        verify(siteSpiceFhirMappingRepository, atLeastOnce()).save(any(SiteFhirMapping.class));
     }
 }

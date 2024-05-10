@@ -232,7 +232,7 @@ public class MigrateServiceImpl implements MigrationService {
                 errorResponse.add(userDTO.getId());
             }
         }
-        return "Users Migrated SuccessFully With Ids: " + response + " Users Already Migrated With Ids: " + errorResponse ;
+        return "Users Migrated SuccessFully" ;
     }
 
     @Override
@@ -250,6 +250,6 @@ public class MigrateServiceImpl implements MigrationService {
                 Logger.logInfo("organisationID {}", organisationID);
             }
         });
-        return " Site Migrated Successfully ";
+        return " Sites Migrated Successfully ";
     }
 }
