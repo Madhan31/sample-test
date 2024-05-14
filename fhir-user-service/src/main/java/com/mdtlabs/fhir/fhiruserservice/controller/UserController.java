@@ -172,7 +172,7 @@ public class UserController {
     @PutMapping(Constants.RESET_PASSWORD_URI)
     public SuccessResponse<Map<String, Boolean>> resetUserPassword(@RequestBody Map<String, String> userInfo) {
         String token = userInfo.get(FieldConstants.TOKEN);
-        String password = userInfo.get(FieldConstants.PASSWORD);
+        String password = userInfo.get(FieldConstants.USER_KEY);
         Map<String, Object> res = userService.resetUserPassword(token, password);
         return new SuccessResponse<>(SuccessCode.SET_PASSWORD, res, HttpStatus.OK);
     }
