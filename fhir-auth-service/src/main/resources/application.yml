@@ -47,7 +47,7 @@ app:
   public-key-file-name: ${FHIR_PUBLIC_KEY_FILE_NAME}
   private-key-file-name: ${FHIR_PRIVATE_KEY_FILE_NAME}
   email-app-url: ${EMAIL_APP_URL}
-  user_key: ${USER}
+  password: ${USER}
 
 fhir:
   log:

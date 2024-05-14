@@ -55,8 +55,8 @@ public class SecurityConfig {
         return new LogoutSuccess();
     }
 
-    @Value("${app.user_key}")
-    String userKey;
+    @Value("${app.password}")
+    String password;
 
     /**
      * <p>
@@ -104,7 +104,7 @@ public class SecurityConfig {
                 .formLogin()
                 .loginProcessingUrl("/session")
                 .usernameParameter(FieldConstants.USERNAME_LOGIN)
-                .passwordParameter(userKey)
+                .passwordParameter(password)
                 .successHandler(authenticationSuccess())
                 .failureHandler(authenticationFailure())
                 .and()
