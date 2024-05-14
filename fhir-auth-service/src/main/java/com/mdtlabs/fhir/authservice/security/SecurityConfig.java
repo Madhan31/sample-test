@@ -2,6 +2,7 @@ package com.mdtlabs.fhir.authservice.security;
 
 import com.mdtlabs.fhir.commonservice.common.constants.Constants;
 import com.mdtlabs.fhir.commonservice.common.constants.FieldConstants;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -54,6 +55,9 @@ public class SecurityConfig {
         return new LogoutSuccess();
     }
 
+    @Value("${app.user_key}")
+    String userKey;
+
     /**
      * <p>
      * Configures the CORS (Cross-Origin Resource Sharing) for the application.
@@ -99,7 +103,8 @@ public class SecurityConfig {
                 .and()
                 .formLogin()
                 .loginProcessingUrl("/session")
-                .usernameParameter(FieldConstants.USERNAME_LOGIN).passwordParameter(FieldConstants.USER_KEY)
+                .usernameParameter(FieldConstants.USERNAME_LOGIN)
+                .passwordParameter(userKey) //NOSONAR
                 .successHandler(authenticationSuccess())
                 .failureHandler(authenticationFailure())
                 .and()
