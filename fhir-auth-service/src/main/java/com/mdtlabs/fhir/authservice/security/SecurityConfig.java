@@ -104,7 +104,7 @@ public class SecurityConfig {
                 .formLogin()
                 .loginProcessingUrl("/session")
                 .usernameParameter(FieldConstants.USERNAME_LOGIN)
-                .passwordParameter(userKey) //NOSONAR
+                .passwordParameter(userKey)
                 .successHandler(authenticationSuccess())
                 .failureHandler(authenticationFailure())
                 .and()
