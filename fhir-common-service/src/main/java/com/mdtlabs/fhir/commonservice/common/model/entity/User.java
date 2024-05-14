@@ -49,7 +49,7 @@ public class User extends BaseEntity implements UserDetails {
     @ColumnTransformer(forColumn = Constants.PASSWORD,
             read = Constants.PGP_DECRYPT + Constants.SINGLE_QUOTE + Constants.FHIR_SALT_NAME + Constants.SINGLE_QUOTE + Constants.CLOSE_BRACKET,
             write = Constants.PGP_ENCRYPT + Constants.SINGLE_QUOTE + Constants.FHIR_SALT_NAME + Constants.SINGLE_QUOTE + Constants.CLOSE_BRACKET)
-    @Column(name = FieldConstants.PASSWORD, columnDefinition = Constants.BYTEA)
+    @Column(name = FieldConstants.USER_KEY, columnDefinition = Constants.BYTEA)
     private String password;
 
     @Column(name = FieldConstants.FIRSTNAME)

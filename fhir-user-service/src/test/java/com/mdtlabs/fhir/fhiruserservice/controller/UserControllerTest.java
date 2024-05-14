@@ -189,13 +189,13 @@ class UserControllerTest {
     @Test
     void resetUserPassword() {
         //given
-        Map<String, String> userInfo = Map.of(FieldConstants.TOKEN, "", FieldConstants.PASSWORD, "");
+        Map<String, String> userInfo = Map.of(FieldConstants.TOKEN, "", FieldConstants.USER_KEY, "");
         Map<String, Object> result = Map.of(Constants.USER, TestDataProvider.getUser());
         SuccessResponse<Map<String, Boolean>> response = new SuccessResponse<>(SuccessCode.SET_PASSWORD,
                 result, HttpStatus.OK);
         //when
         when(userService.resetUserPassword(userInfo.get(FieldConstants.TOKEN),
-                userInfo.get(FieldConstants.PASSWORD))).thenReturn(result);
+                userInfo.get(FieldConstants.USER_KEY))).thenReturn(result);
         //then
         SuccessResponse<Map<String, Boolean>> actualResponse = userController.resetUserPassword(userInfo);
         Assertions.assertEquals(response, actualResponse);

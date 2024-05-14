@@ -24,7 +24,7 @@ public class FieldConstants {
     public static final String USER = "\"user\"";
     public static final String USERNAME = "user_name";
     public static final String USERNAME_LOGIN = "username";
-    public static final String PASSWORD = "password";
+    public static final String USER_KEY = "password";
     public static final String FIRSTNAME = "first_name";
     public static final String MIDDLE_NAME = "middle_name";
     public static final String LASTNAME = "last_name";

@@ -99,7 +99,7 @@ public class SecurityConfig {
                 .and()
                 .formLogin()
                 .loginProcessingUrl("/session")
-                .usernameParameter(FieldConstants.USERNAME_LOGIN).passwordParameter(FieldConstants.PASSWORD)
+                .usernameParameter(FieldConstants.USERNAME_LOGIN).passwordParameter(FieldConstants.USER_KEY)
                 .successHandler(authenticationSuccess())
                 .failureHandler(authenticationFailure())
                 .and()
